@@ -14,13 +14,7 @@ interface Ticket {
 
 export default function Tickets() {
   const [tickets, setTickets] = useState<Ticket[]>([]);
-  const [formData, setFormData] = useState<Omit<Ticket, "id">>({
-    from: "",
-    to: "",
-    date: "",
-    time: "",
-    price: 0,
-  });
+
 
   useEffect(() => {
     fetchTickets();
