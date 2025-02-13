@@ -111,7 +111,7 @@ export default function AdminPanel() {
             </tr>
           </thead>
           <tbody>
-            {tickets.map((ticket:any) => (
+            {tickets.map((ticket) => (
               <tr key={ticket.id}>
                 <td>{ticket.id}</td>
                 <td>{ticket.from}</td>
