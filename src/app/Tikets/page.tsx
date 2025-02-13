@@ -32,15 +32,6 @@ export default function Tickets() {
     else setTickets(data as Ticket[]);
   }
 
-  async function addTicket(e: React.FormEvent) {
-    e.preventDefault();
-    const { error } = await supabase.from("tickets").insert([formData]);
-    if (error) console.error("Error adding ticket:", error);
-    else {
-      fetchTickets();
-      setFormData({ from: "", to: "", date: "", time: "", price: 0 });
-    }
-  }
 
   async function deleteTicket(id: string) {
     const { error } = await supabase.from("tickets").delete().eq("id", id);
